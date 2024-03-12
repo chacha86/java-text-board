@@ -54,8 +54,13 @@ public class BoardApp {
                 }
             } else if (cmd.equals("update")) {
                 System.out.print("수정할 게시물 번호를 입력해주세요 : ");
-                int inputId = Integer.parseInt(scan.nextLine()); // 1 -> index : 0
-                // 2 -> index : 1
+                int inputId = Integer.parseInt(scan.nextLine());
+
+                int index = findIndexById(inputId);
+                if(index == -1) {
+                    System.out.println("없는 게시물입니다.");
+                    continue;
+                }
 
                 System.out.print("새로운 제목을 입력해주세요 : ");
                 String newTitle = scan.nextLine();
@@ -66,7 +71,6 @@ public class BoardApp {
                 // 변하지 않는 것에서 변하는 것을 분리
                 // 변하는 것에서 변하지 않는 것을 분리
 
-                int index = findIndexById(inputId);
                 Article target = articleList.get(index);
                 target.setTitle(newTitle); // target은 참조값이므로 직접 객체를 접근하여 수정 가능
                 target.setBody(newBody);
@@ -75,9 +79,15 @@ public class BoardApp {
 
             } else if (cmd.equals("delete")) {
                 System.out.print("삭제할 게시물 번호를 입력해주세요 : ");
-                int inputId = Integer.parseInt(scan.nextLine()); // 1 -> index : 0
+                int inputId = Integer.parseInt(scan.nextLine());
 
                 int index = findIndexById(inputId);
+
+                if(index == -1) {
+                    System.out.println("없는 게시물입니다.");
+                    continue;
+                }
+
                 articleList.remove(index);
                 System.out.printf("%d 게시물이 삭제되었습니다.\n", inputId);
 
@@ -88,16 +98,15 @@ public class BoardApp {
     // 입력 : 찾고자 하는 게시물 번호
     // 출력 : 게시물 번호에 해당하는 인덱스
     public int findIndexById(int id) {
-        int index = -1; // 최종적으로 찾은 목적 인덱스를 저장하기 위함. index는 0 ~ n까지 표현 가능하므로 인덱스로 사용이 불가능한 -1로 설정
 
         for (int i = 0; i < articleList.size(); i++) {
             Article article = articleList.get(i);
 
             if (article.getId() == id) {
-                index = i;
+                return i; // 원하는 것은 찾은 즉시 종료.
             }
         }
 
-        return index;
+        return -1;
     }
 }
