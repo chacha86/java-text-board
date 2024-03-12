@@ -76,6 +76,8 @@ public class BoardApp {
 
                     if(targetId == inputId) { // 삭제하고자 하는 id와 i번째 id가 같다면
                         idList.remove(i); // 삭제해라
+                        titleList.remove(i);
+                        bodyList.remove(i);
                     }
                 }
 
