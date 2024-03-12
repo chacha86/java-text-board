@@ -12,7 +12,7 @@ public class BoardApp {
         ArrayList<String> titleList = new ArrayList<>();
         ArrayList<String> bodyList = new ArrayList<>();
         ArrayList<Integer> idList = new ArrayList<>();
-        int articleId = 1; // 시작 번호를 1로 지정
+        int latestArticleId = 1; // 시작 번호를 1로 지정
 
 //        String title = ""; // 딱히 처음에 값이 필요 없음. 추후에 입력을 통해 넣을 것임.
 //        String body = "";
@@ -36,8 +36,8 @@ public class BoardApp {
                 String body = scan.nextLine();
                 bodyList.add(body);
 
-                idList.add(articleId); // 게시물이 생성될 때마다 번호를 생성해서 저장
-                articleId++; // 게시물이 생성될 때마다 번호를 증가
+                idList.add(latestArticleId); // 게시물이 생성될 때마다 번호를 생성해서 저장
+                latestArticleId++; // 게시물이 생성될 때마다 번호를 증가
 
                 System.out.println("게시물이 등록되었습니다.");
 
@@ -69,12 +69,18 @@ public class BoardApp {
                 System.out.printf("%d번 게시물이 수정되었습니다.\n", id);
             } else if(cmd.equals("delete")) {
                 System.out.print("삭제할 게시물 번호를 입력해주세요 : ");
-                int id = Integer.parseInt(scan.nextLine()); // 1 -> index : 0
+                int inputId = Integer.parseInt(scan.nextLine()); // 1 -> index : 0
 
-                titleList.remove(id - 1);
-                bodyList.remove(id - 1);
+                for(int i = 0; i < idList.size(); i++) {
+                    int targetId = idList.get(i);
 
-                System.out.printf("%d 게시물이 삭제되었습니다.\n", id);
+                    if(targetId == inputId) { // 삭제하고자 하는 id와 i번째 id가 같다면
+                        idList.remove(i); // 삭제해라
+                    }
+                }
+
+
+                System.out.printf("%d 게시물이 삭제되었습니다.\n", inputId);
 
             }
         }
