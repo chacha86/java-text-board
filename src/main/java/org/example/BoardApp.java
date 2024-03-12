@@ -27,7 +27,6 @@ public class BoardApp {
                 System.out.print("게시물 내용을 입력해주세요 : ");
                 String body = scan.nextLine();
 
-                latestArticleId++; // 게시물이 생성될 때마다 번호를 증가
 
                 // 기본 생성자 이용
 //                Article article = new Article();
@@ -41,6 +40,8 @@ public class BoardApp {
                 articleList.add(article);
                 System.out.println("게시물이 등록되었습니다.");
 
+                latestArticleId++; // 게시물이 생성될 때마다 번호를 증가
+
             } else if (cmd.equals("list")) {
                 System.out.println("===================");
                 for (int i = 0; i < articleList.size(); i++) {
@@ -52,7 +53,7 @@ public class BoardApp {
                 }
             } else if (cmd.equals("update")) {
                 System.out.print("수정할 게시물 번호를 입력해주세요 : ");
-                int id = Integer.parseInt(scan.nextLine()); // 1 -> index : 0
+                int inputId = Integer.parseInt(scan.nextLine()); // 1 -> index : 0
                 // 2 -> index : 1
 
                 System.out.print("새로운 제목을 입력해주세요 : ");
@@ -61,11 +62,17 @@ public class BoardApp {
                 System.out.print("새로운 내용을 입력해주세요 : ");
                 String newBody = scan.nextLine();
 
-                // 인덱스로 찾아서 수정
-//                titleList.set(id - 1, newTitle);
-//                bodyList.set(id - 1, newBody);
+                for(int i = 0; i < articleList.size(); i++) {
+                    Article target = articleList.get(i);
 
-                System.out.printf("%d번 게시물이 수정되었습니다.\n", id);
+                    if (target.getId() == inputId) {
+                        target.setTitle(newTitle); // target은 참조값이므로 직접 객체를 접근하여 수정 가능
+                        target.setBody(newBody);
+                    }
+
+                }
+
+                System.out.printf("%d번 게시물이 수정되었습니다.\n", inputId);
             } else if(cmd.equals("delete")) {
                 System.out.print("삭제할 게시물 번호를 입력해주세요 : ");
                 int inputId = Integer.parseInt(scan.nextLine()); // 1 -> index : 0
