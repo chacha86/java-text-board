@@ -130,6 +130,21 @@ public class BoardApp {
                 System.out.println("===================");
 
 
+            } else if(cmd.equals("search")) {
+                // 검색어를 입력
+                System.out.println("검색 키워드를 입력해주세요 :");
+                String keyword = scan.nextLine();
+
+                for(int i = 0; i < articleList.size(); i++) {
+                    Article article = articleList.get(i);
+
+                    if(article.getTitle().contains(keyword)) { // 검색에 keyword가 포함된 경우
+                        System.out.println("번호 : " + article.getId());
+                        System.out.printf("제목 : %s\n", article.getTitle());
+                        System.out.println("===================");
+                    }
+                }
+
             }
         }
     }
