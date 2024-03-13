@@ -14,10 +14,9 @@ public class BoardApp {
         Scanner scan = new Scanner(System.in);
         int latestArticleId = 4; // 테스트 데이터 3개 있으므로 시작 번호를 4로 지정
 
-
-        Article a1 = new Article(1, "안녕하세요 반갑습니다. 자바 공부중이에요.", "냉무", getCurrentDateTime());
-        Article a2 = new Article(2, "자바 질문좀 할게요~", "냉무", getCurrentDateTime());
-        Article a3 = new Article(3, "정처기 따야되나요?", "냉무", getCurrentDateTime());
+        Article a1 = new Article(1, "안녕하세요 반갑습니다. 자바 공부중이에요.", "냉무", 0, getCurrentDateTime());
+        Article a2 = new Article(2, "자바 질문좀 할게요~", "냉무", 0, getCurrentDateTime());
+        Article a3 = new Article(3, "정처기 따야되나요?", "냉무", 0, getCurrentDateTime());
         articleList.add(a1);
         articleList.add(a2);
         articleList.add(a3);
@@ -47,7 +46,7 @@ public class BoardApp {
 ////                article.setBody(body);
 
                 // 모든 매개변수를 받는 생성자 이용
-                Article article = new Article(latestArticleId, title, body, getCurrentDateTime());
+                Article article = new Article(latestArticleId, title, body, 0, getCurrentDateTime());
 
                 articleList.add(article);
                 System.out.println("게시물이 등록되었습니다.");
@@ -115,12 +114,19 @@ public class BoardApp {
 
                 Article article = articleList.get(index);
 
+                // 조회수 증가 v1
+//                article.setHit(article.getHit() + 1); // 기존의 조회수 가져와서 1 증가.
+
+                // 조회수 증가 v2
+                article.increaseHit(); // 각 객체들이 알아서 조회수를 증가시킴. 관련 로직은 한 곳에 집중시켜서 관리를 편하게 함
+
                 // alt + ctrl + L : 코드 정리. 자주 사용할 것
                 System.out.println("===================");
                 System.out.println("번호 : " + article.getId());
                 System.out.println("제목 : " + article.getTitle());
                 System.out.println("내용 : " + article.getBody());
                 System.out.println("등록날짜 : " + article.getRegDate());
+                System.out.println("조회수 : " + article.getHit());
                 System.out.println("===================");
 
 
