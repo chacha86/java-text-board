@@ -55,13 +55,8 @@ public class BoardApp {
 
             } else if (cmd.equals("list")) {
                 System.out.println("===================");
-                for (int i = 0; i < articleList.size(); i++) {
-                    Article article = articleList.get(i);
+                printArticleList(this.articleList); // 전체 출력 -> 전체 저장소 넘기기
 
-                    System.out.println("번호 : " + article.getId());
-                    System.out.printf("제목 : %s\n", article.getTitle());
-                    System.out.println("===================");
-                }
             } else if (cmd.equals("update")) {
                 System.out.print("수정할 게시물 번호를 입력해주세요 : ");
                 int inputId = Integer.parseInt(scan.nextLine());
@@ -130,22 +125,32 @@ public class BoardApp {
                 System.out.println("===================");
 
 
-            } else if(cmd.equals("search")) {
+            } else if (cmd.equals("search")) {
                 // 검색어를 입력
                 System.out.println("검색 키워드를 입력해주세요 :");
                 String keyword = scan.nextLine();
 
+                ArrayList<Article> searchedList = new ArrayList<>();
+
                 for(int i = 0; i < articleList.size(); i++) {
                     Article article = articleList.get(i);
-
-                    if(article.getTitle().contains(keyword)) { // 검색에 keyword가 포함된 경우
-                        System.out.println("번호 : " + article.getId());
-                        System.out.printf("제목 : %s\n", article.getTitle());
-                        System.out.println("===================");
+                    if(article.getTitle().contains(keyword)) {
+                        searchedList.add(article);
                     }
                 }
 
+                printArticleList(searchedList);
             }
+        }
+    }
+    public void printArticleList(ArrayList<Article> targetList) {
+        for(int i = 0; i < targetList.size(); i++) {
+
+            Article article = targetList.get(i);
+
+            System.out.println("번호 : " + article.getId());
+            System.out.printf("제목 : %s\n", article.getTitle());
+            System.out.println("===================");
         }
     }
 
