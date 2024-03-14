@@ -16,22 +16,19 @@ public class BoardApp {
 
             System.out.print("명령어 : ");
             String cmd = scan.nextLine();
-
-            if (cmd.equals("exit")) { // 숫자가 아닌 경우 같다라는 표현을 할 때 == 이 아닌 .equals()를 사용해야 한다.
+            if(cmd.equals("exit")) {
                 System.out.println("프로그램을 종료합니다.");
-                break; // 반복문 탈출
-            } else if (cmd.equals("add")) {
-                add();
-            } else if (cmd.equals("list")) {
-                list();
-            } else if (cmd.equals("update")) {
-                update();
-            } else if (cmd.equals("delete")) {
-                delete();
-            } else if (cmd.equals("detail")) {
-                detail();
-            } else if (cmd.equals("search")) {
-                search();
+                break;
+            }
+
+            switch (cmd) {
+                case "add" -> add();
+                case "list" -> list();
+                case "update" -> update();
+                case "delete" -> delete();
+                case "detail" -> detail();
+                case "search" -> search();
+                default -> System.out.println("올바른 명령어가 아닙니다.");
             }
         }
     }
