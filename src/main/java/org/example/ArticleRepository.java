@@ -1,16 +1,21 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ArticleRepository {
 
+    CommonUtil commonUtil = new CommonUtil();
     ArrayList<Article> articleList = new ArrayList<>(); // 인스턴스 변수
-
+    ArticleView articleView = new ArticleView();
+    Scanner scan = commonUtil.getScanner();
+    int WRONG_VALUE = -1; // 값의 의미를 부여
+    int latestArticleId = 4; // 테스트 데이터 3개 있으므로 시작 번호를 4로 지정
 
     public void makeTestData() {
-        Article a1 = new Article(1, "안녕하세요 반갑습니다. 자바 공부중이에요.", "냉무", 0, getCurrentDateTime());
-        Article a2 = new Article(2, "자바 질문좀 할게요~", "냉무", 0, getCurrentDateTime());
-        Article a3 = new Article(3, "정처기 따야되나요?", "냉무", 0, getCurrentDateTime());
+        Article a1 = new Article(1, "안녕하세요 반갑습니다. 자바 공부중이에요.", "냉무", 0, commonUtil.getCurrentDateTime());
+        Article a2 = new Article(2, "자바 질문좀 할게요~", "냉무", 0, commonUtil.getCurrentDateTime());
+        Article a3 = new Article(3, "정처기 따야되나요?", "냉무", 0, commonUtil.getCurrentDateTime());
         articleList.add(a1);
         articleList.add(a2);
         articleList.add(a3);
@@ -30,7 +35,7 @@ public class ArticleRepository {
             }
         }
 
-        printArticleList(searchedList);
+        articleView.printArticleList(searchedList);
     }
 
     public void detail() {
@@ -108,7 +113,7 @@ public class ArticleRepository {
     }
 
     public void list() {
-        printArticleList(this.articleList); // 전체 출력 -> 전체 저장소 넘기기
+        articleView.printArticleList(this.articleList); // 전체 출력 -> 전체 저장소 넘기기
     }
 
     public void add() {
@@ -120,7 +125,7 @@ public class ArticleRepository {
         String body = scan.nextLine();
 
         // 모든 매개변수를 받는 생성자 이용
-        Article article = new Article(latestArticleId, title, body, 0, getCurrentDateTime());
+        Article article = new Article(latestArticleId, title, body, 0, commonUtil.getCurrentDateTime());
 
         articleList.add(article);
         System.out.println("게시물이 등록되었습니다.");
@@ -141,4 +146,12 @@ public class ArticleRepository {
         return null; // null -> 없다. 객체 타입에서만 사용 가능
     }
 
+    private int getParamAsInt(String param, int defaultValue) {
+        try {
+            return Integer.parseInt(param);
+        } catch (NumberFormatException e) {
+            System.out.println("숫자를 입력해주세요.");
+            return defaultValue;
+        }
+    }
 }
