@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84ec518b-b2c8-4d21-aedd-741b91db94b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ExceptionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BoardApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BoardApp.java" afterDir="false" />
     </list>
@@ -67,6 +68,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ExceptionTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.ExceptionTest" />
+      <module name="java-board.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LocalDateTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.LocalDateTest" />
       <module name="java-board.main" />
@@ -109,6 +123,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ExceptionTest" />
         <item itemvalue="Application.ContainsTest" />
         <item itemvalue="Application.LocalDateTest" />
         <item itemvalue="Application.Test" />
@@ -127,7 +142,7 @@
       <workItem from="1710132266266" duration="5364000" />
       <workItem from="1710201601341" duration="14665000" />
       <workItem from="1710288044155" duration="10211000" />
-      <workItem from="1710374014412" duration="3821000" />
+      <workItem from="1710374014412" duration="6627000" />
     </task>
     <servers />
   </component>

@@ -9,6 +9,7 @@ public class BoardApp {
     ArrayList<Article> articleList = new ArrayList<>(); // 인스턴스 변수
     Scanner scan = new Scanner(System.in);
     int latestArticleId = 4; // 테스트 데이터 3개 있으므로 시작 번호를 4로 지정
+    int WRONG_VALUE = -1; // 값의 의미를 부여
 
     public void run() {
         makeTestData();
@@ -61,7 +62,11 @@ public class BoardApp {
 
     private void detail() {
         System.out.print("상세보기 할 게시물 번호를 입력해주세요 : ");
-        int inputId = Integer.parseInt(scan.nextLine());
+
+        int inputId = getParamAsInt(scan.nextLine(), WRONG_VALUE);
+        if(inputId == WRONG_VALUE) {
+            return;
+        }
 
         Article article = findArticleById(inputId);
 
@@ -82,8 +87,13 @@ public class BoardApp {
     }
 
     private void delete() {
+
         System.out.print("삭제할 게시물 번호를 입력해주세요 : ");
-        int inputId = Integer.parseInt(scan.nextLine());
+
+        int inputId = getParamAsInt(scan.nextLine(), WRONG_VALUE);
+        if(inputId == WRONG_VALUE) {
+            return;
+        }
 
         Article article = findArticleById(inputId);
 
@@ -98,7 +108,11 @@ public class BoardApp {
 
     private void update() {
         System.out.print("수정할 게시물 번호를 입력해주세요 : ");
-        int inputId = Integer.parseInt(scan.nextLine());
+
+        int inputId = getParamAsInt(scan.nextLine(), WRONG_VALUE);
+        if(inputId == WRONG_VALUE) {
+            return;
+        }
 
         Article article = findArticleById(inputId);
 
@@ -180,5 +194,14 @@ public class BoardApp {
         String formattedDate = now.format(formatter);
 
         return formattedDate;
+    }
+
+    private int getParamAsInt(String param, int defaultValue) {
+        try {
+            return Integer.parseInt(param);
+        } catch (NumberFormatException e) {
+            System.out.println("숫자를 입력해주세요.");
+            return defaultValue;
+        }
     }
 }
