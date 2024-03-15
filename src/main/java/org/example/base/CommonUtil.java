@@ -5,14 +5,14 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class CommonUtil {
-    private Scanner scan = new Scanner(System.in);
+    private static Scanner scan = new Scanner(System.in);
 
     public Scanner getScanner() {
         return scan;
     }
 
     // 모든 곳에서 자주 사용되는 것은 여기에 모아두는 것이 좋습니다.
-    public String getCurrentDateTime() {
+    public static String getCurrentDateTime() {
         LocalDateTime now = LocalDateTime.now();
 
         // 날짜와 시간의 형식을 지정합니다. 여기서는 연-월-일 시:분:초 형식을 사용합니다.
