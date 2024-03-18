@@ -51,14 +51,14 @@ public class ArticleController { // Model + Controller
             return;
         }
 
-        Article article = articleRepository.findArticleById(inputId);
+        Article article = articleDB.findById(inputId);
 
         if (article == null) {
             System.out.println("없는 게시물입니다.");
             return;
         }
 
-        articleRepository.deleteArticle(article);
+        articleDB.delete(article);
         System.out.printf("%d 게시물이 삭제되었습니다.\n", inputId);
     }
 
@@ -70,7 +70,7 @@ public class ArticleController { // Model + Controller
             return;
         }
 
-        Article article = articleRepository.findArticleById(inputId);
+        Article article = articleDB.findById(inputId);
 
         if (article == null) {
             System.out.println("없는 게시물입니다.");
@@ -83,7 +83,10 @@ public class ArticleController { // Model + Controller
         System.out.print("새로운 내용을 입력해주세요 : ");
         String newBody = scan.nextLine();
 
-        articleRepository.updateArticle(article, newTitle, newBody);
+        article.setTitle(newTitle);
+        article.setBody(newBody);
+
+        articleDB.save(article);
         System.out.printf("%d번 게시물이 수정되었습니다.\n", inputId);
     }
 

@@ -17,11 +17,16 @@ public class ArticleJsonUtil {
 
         assert article != null;
 
-        int id = getCreatedForArticleId();
-        article.setId(id);
-
-        String path = getArticleFilePath(id);
+        String path = getArticleFilePath(article.getId());
         String json = JsonUtil.getJsonStr(article);
+
+        if(!FileUtil.isExistFile(getArticleFilePath(article.getId())))  {
+            int id = getCreatedForArticleId();
+            article.setId(id);
+
+            path = getArticleFilePath(id);
+            json = JsonUtil.getJsonStr(article);
+        }
 
         JsonUtil.writeWithJackson(path, json);
 
