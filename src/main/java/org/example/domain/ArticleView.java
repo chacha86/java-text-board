@@ -1,10 +1,11 @@
 package org.example.domain;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ArticleView {
 
-    public void printArticleList(ArrayList<Article> targetList) {
+    public void printArticleList(List<Article> targetList) {
 
         System.out.println("===================");
         for (int i = 0; i < targetList.size(); i++) {
@@ -21,7 +22,7 @@ public class ArticleView {
         System.out.println("번호 : " + article.getId());
         System.out.println("제목 : " + article.getTitle());
         System.out.println("내용 : " + article.getBody());
-        System.out.println("등록날짜 : " + article.getRegDate());
+//        System.out.println("등록날짜 : " + article.getRegDate());
         System.out.println("조회수 : " + article.getHit());
         System.out.println("===================");
     }

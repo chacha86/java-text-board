@@ -14,12 +14,12 @@ public class ArticleRepository {
     }
 
     public void makeTestData() {
-        Article a1 = new Article(1, "안녕하세요 반갑습니다. 자바 공부중이에요.", "냉무", 0, commonUtil.getCurrentDateTime());
-        Article a2 = new Article(2, "자바 질문좀 할게요~", "냉무", 0, commonUtil.getCurrentDateTime());
-        Article a3 = new Article(3, "정처기 따야되나요?", "냉무", 0, commonUtil.getCurrentDateTime());
-        articleList.add(a1);
-        articleList.add(a2);
-        articleList.add(a3);
+//        Article a1 = new Article(1, "안녕하세요 반갑습니다. 자바 공부중이에요.", "냉무", 0, commonUtil.getCurrentDateTime());
+//        Article a2 = new Article(2, "자바 질문좀 할게요~", "냉무", 0, commonUtil.getCurrentDateTime());
+//        Article a3 = new Article(3, "정처기 따야되나요?", "냉무", 0, commonUtil.getCurrentDateTime());
+//        articleList.add(a1);
+//        articleList.add(a2);
+//        articleList.add(a3);
     }
 
     public ArrayList<Article> findArticleByKeyword(String keyword) {
@@ -61,12 +61,12 @@ public class ArticleRepository {
         return articleList;
     }
 
-    public Article saveArticle(String title, String body) {
+//    public Article saveArticle(String title, String body) {
 
-        Article article = new Article(latestArticleId, title, body, 0, commonUtil.getCurrentDateTime());
-        articleList.add(article);
-        latestArticleId++;
+//        Article article = new Article(latestArticleId, title, body, 0, commonUtil.getCurrentDateTime());
+//        articleList.add(article);
+//        latestArticleId++;
 
-        return article;
-    }
+//        return article;
+//    }
 }

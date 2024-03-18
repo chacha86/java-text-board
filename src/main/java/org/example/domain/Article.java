@@ -10,17 +10,30 @@ public class Article {
 
     private int hit; // 조회수
 
-    private String regDate; // 등록날짜
+//    private String regDate; // 등록날짜
 
     public Article() {
     }
 
-    public Article(int id, String title, String body, int hit, String regDate) {
+//    public Article(String title, String body, int hit, String regDate) {
+//        this.title = title;
+//        this.body = body;
+//        this.hit = hit;
+//        this.regDate = regDate;
+//    }
+
+    public Article(int id, String title, String body, int hit) {
         this.id = id;
         this.title = title;
         this.body = body;
         this.hit = hit;
-        this.regDate = regDate;
+//        this.regDate = regDate;
+    }
+    public Article(String title, String body, int hit) {
+        this.title = title;
+        this.body = body;
+        this.hit = hit;
+//        this.regDate = regDate;
     }
 
     public void increaseHit() {
@@ -35,13 +48,13 @@ public class Article {
         this.hit = hit;
     }
 
-    public String getRegDate() {
-        return regDate;
-    }
-
-    public void setRegDate(String regDate) {
-        this.regDate = regDate;
-    }
+//    public String getRegDate() {
+//        return regDate;
+//    }
+//
+//    public void setRegDate(String regDate) {
+//        this.regDate = regDate;
+//    }
 
     public int getId() {
         return id;

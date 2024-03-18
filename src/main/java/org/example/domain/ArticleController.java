@@ -3,6 +3,7 @@ package org.example.domain;
 import org.example.base.CommonUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 // Model - Controller - View
@@ -11,6 +12,7 @@ public class ArticleController { // Model + Controller
     CommonUtil commonUtil = new CommonUtil();
     ArticleView articleView = new ArticleView();
     ArticleRepository articleRepository = new ArticleRepository();
+    ArticleDB articleDB = new ArticleJsonDB();
 
     Scanner scan = commonUtil.getScanner();
     int WRONG_VALUE = -1;
@@ -33,12 +35,8 @@ public class ArticleController { // Model + Controller
             return;
         }
 
-        Article article = articleRepository.findArticleById(inputId);
-
-        if (article == null) {
-            System.out.println("없는 게시물입니다.");
-            return;
-        }
+//        Article article = articleRepository.findArticleById(inputId);
+        Article article = articleDB.findById(inputId);
 
         article.increaseHit();
         articleView.printArticleDetail(article);
@@ -90,7 +88,8 @@ public class ArticleController { // Model + Controller
     }
 
     public void list() {
-        ArrayList<Article> articleList = articleRepository.findAll();
+//        ArrayList<Article> articleList = articleRepository.findAll();
+        List<Article> articleList = articleDB.findAll();
         articleView.printArticleList(articleList); // 전체 출력 -> 전체 저장소 넘기기
     }
 
@@ -102,7 +101,9 @@ public class ArticleController { // Model + Controller
         System.out.print("게시물 내용을 입력해주세요 : ");
         String body = scan.nextLine();
 
-        articleRepository.saveArticle(title, body);
+        Article article = new Article(title, body, 0);
+//        articleRepository.saveArticle(title, body);
+        articleDB.save(article);
         System.out.println("게시물이 등록되었습니다.");
 
     }
