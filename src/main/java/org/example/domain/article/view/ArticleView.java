@@ -1,6 +1,7 @@
-package org.example.domain;
+package org.example.domain.article.view;
 
-import java.util.ArrayList;
+import org.example.domain.article.entity.Article;
+
 import java.util.List;
 
 public class ArticleView {

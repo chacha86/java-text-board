@@ -1,7 +1,7 @@
 package org.example.base.json;
 
 import org.example.base.file.FileUtil;
-import org.example.domain.Article;
+import org.example.domain.article.entity.Article;
 
 import java.io.File;
 import java.util.ArrayList;

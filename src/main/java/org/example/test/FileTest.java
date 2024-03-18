@@ -2,15 +2,10 @@ package org.example.test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.base.CommonUtil;
-import org.example.domain.Article;
+import org.example.domain.article.entity.Article;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
 
 public class FileTest {
     public static void main(String[] args) {

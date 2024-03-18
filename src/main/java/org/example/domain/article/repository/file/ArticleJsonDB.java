@@ -1,6 +1,8 @@
-package org.example.domain;
+package org.example.domain.article.repository.file;
 
 import org.example.base.json.ArticleJsonUtil;
+import org.example.domain.article.entity.Article;
+import org.example.domain.article.repository.ArticleDB;
 
 import java.util.List;
 

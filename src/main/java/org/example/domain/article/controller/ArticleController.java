@@ -1,6 +1,12 @@
-package org.example.domain;
+package org.example.domain.article.controller;
 
 import org.example.base.CommonUtil;
+import org.example.domain.article.repository.ArticleDB;
+import org.example.domain.article.repository.dbms.MySqlDB;
+import org.example.domain.article.repository.file.ArticleJsonDB;
+import org.example.domain.article.repository.memory.ArticleRepository;
+import org.example.domain.article.view.ArticleView;
+import org.example.domain.article.entity.Article;
 
 import java.util.ArrayList;
 import java.util.List;

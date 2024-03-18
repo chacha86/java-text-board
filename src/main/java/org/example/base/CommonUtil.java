@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class CommonUtil {
     private static Scanner scan = new Scanner(System.in);
 
-    public Scanner getScanner() {
+    public static Scanner getScanner() {
         return scan;
     }
 

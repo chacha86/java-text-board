@@ -1,4 +1,6 @@
-package org.example.domain;
+package org.example.domain.article.repository;
+
+import org.example.domain.article.entity.Article;
 
 import java.util.List;
 

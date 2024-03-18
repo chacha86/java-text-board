@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84ec518b-b2c8-4d21-aedd-741b91db94b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/base/dbms/DBUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/base/dbms/MyArticleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/base/dbms/MyMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/base/dbms/SqlMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/repository/dbms/MySqlDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/base/BoardApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/base/BoardApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/base/CommonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/base/CommonUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/base/json/ArticleJsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/base/json/ArticleJsonUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/base/json/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/base/json/JsonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/entity/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/ArticleDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/repository/ArticleDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/ArticleJsonDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/repository/file/ArticleJsonDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/repository/memory/ArticleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/ArticleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/view/ArticleView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/FileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/FileTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,13 +49,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -68,6 +86,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example.base.dbms" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="ContainsTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.ContainsTest" />
@@ -158,7 +181,7 @@
       <workItem from="1710288044155" duration="10211000" />
       <workItem from="1710374014412" duration="12643000" />
       <workItem from="1710512891511" duration="9281000" />
-      <workItem from="1710730444369" duration="1762000" />
+      <workItem from="1710730444369" duration="8023000" />
     </task>
     <servers />
   </component>
@@ -166,6 +189,15 @@
     <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/base/dbms/DBUtil.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((JsonParseException)e)._processor" custom="com.fasterxml.jackson.core.JsonParseException" />

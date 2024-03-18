@@ -1,6 +1,7 @@
-package org.example.domain;
+package org.example.domain.article.repository.memory;
 
 import org.example.base.CommonUtil;
+import org.example.domain.article.entity.Article;
 
 import java.util.ArrayList;
 

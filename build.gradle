@@ -14,7 +14,8 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.0'
-
+    // mysql jdbc connector
+    implementation 'mysql:mysql-connector-java:8.0.28'
 }
 
 test {
