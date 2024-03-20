@@ -31,4 +31,8 @@ public class ArticleFileRepository {
 
     }
 
+    public ArrayList<Article> findAll() {
+        // json 파일을 읽어와서 ArrayList로 반환
+    }
+
 }
