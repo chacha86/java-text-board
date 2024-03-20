@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84ec518b-b2c8-4d21-aedd-741b91db94b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/base/FileUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/test/FileTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ArticleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ArticleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ArticleView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BoardApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BoardApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/base/BoardApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/base/BoardApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/ArticleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/ArticleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/view/ArticleView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +49,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;enhanced&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -56,13 +60,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.FileTest">
     <configuration name="ContainsTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.ContainsTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.test.ContainsTest" />
       <module name="java-board.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.domain.article.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -71,11 +75,11 @@
       </method>
     </configuration>
     <configuration name="ExceptionTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.ExceptionTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.test.ExceptionTest" />
       <module name="java-board.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.domain.article.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,12 +87,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocalDateTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.LocalDateTest" />
+    <configuration name="FileTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.test.FileTest" />
       <module name="java-board.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.base.FileUtil" />
+      <module name="java-board.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.base.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,20 +118,7 @@
       <module name="java-board.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Test" />
-      <module name="java-board.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.domain.article.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,11 +128,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FileTest" />
+        <item itemvalue="Application.FileUtil" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ExceptionTest" />
         <item itemvalue="Application.ContainsTest" />
-        <item itemvalue="Application.LocalDateTest" />
-        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -144,7 +148,9 @@
       <workItem from="1710132266266" duration="5364000" />
       <workItem from="1710201601341" duration="14665000" />
       <workItem from="1710288044155" duration="10211000" />
-      <workItem from="1710374014412" duration="12643000" />
+      <workItem from="1710374014412" duration="14273000" />
+      <workItem from="1710473724575" duration="3719000" />
+      <workItem from="1710901201367" duration="1909000" />
     </task>
     <servers />
   </component>
