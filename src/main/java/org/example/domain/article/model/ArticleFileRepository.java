@@ -82,4 +82,9 @@ public class ArticleFileRepository {
 
     }
 
+    public Article findById(int id) {
+        // id에 해당하는 게시물(article) 반환
+
+    }
+
 }
