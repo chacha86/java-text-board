@@ -12,6 +12,21 @@ import java.util.Scanner;
 
 public class FileTest {
     public static void main(String[] args) {
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            // JSON 파일을 읽어와 MyObject 객체로 변환
+            Article a1 = mapper.readValue(new File("article.json"), Article.class);
+
+            // 객체 정보 출력 (toString 메소드를 이용)
+            System.out.println(a1.getTitle());
+            System.out.println(a1.getBody());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void jsonWrite() {
 
         CommonUtil commonUtil = new CommonUtil();
         Article a1 = new Article(1, "안녕하세요 반갑습니다. 자바 공부중이에요.", "냉무", 0, commonUtil.getCurrentDateTime());

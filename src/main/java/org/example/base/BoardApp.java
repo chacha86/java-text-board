@@ -1,11 +1,12 @@
 package org.example.base;
 
 import org.example.domain.article.controller.ArticleController;
+import org.example.domain.article.controller.ArticleTestController;
 
 import java.util.Scanner;
 
 public class BoardApp {
-    ArticleController articleController = new ArticleController();
+    ArticleTestController articleController = new ArticleTestController();
     Scanner scan = new Scanner(System.in);
     public void run() {
 
@@ -20,11 +21,11 @@ public class BoardApp {
 
             switch (cmd) {
                 case "add" -> articleController.add();
-                case "list" -> articleController.list();
-                case "update" -> articleController.update();
-                case "delete" -> articleController.delete();
-                case "detail" -> articleController.detail();
-                case "search" -> articleController.search();
+//                case "list" -> articleController.list();
+//                case "update" -> articleController.update();
+//                case "delete" -> articleController.delete();
+//                case "detail" -> articleController.detail();
+//                case "search" -> articleController.search();
                 default -> System.out.println("올바른 명령어가 아닙니다.");
             }
         }
