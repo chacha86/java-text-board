@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84ec518b-b2c8-4d21-aedd-741b91db94b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/ArticleMySQLRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/test/DBTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/article/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/ArticleFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/ArticleFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/ArticleMemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/OverrideRemind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/OverrideRemind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/ArticleMySQLRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/ArticleMySQLRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "file",
+    "git-widget-placeholder": "mysql",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,8 +59,8 @@
   }
 }]]></component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="FileTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.test.FileTest" />
+    <configuration name="DBTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.test.DBTest" />
       <module name="java-board.main" />
       <extension name="coverage">
         <pattern>
@@ -77,12 +72,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.base.FileUtil" />
+    <configuration name="FileTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.test.FileTest" />
       <module name="java-board.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.base.*" />
+          <option name="PATTERN" value="org.example.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,10 +127,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.DBTest" />
         <item itemvalue="Application.OverrideRemind (1)" />
         <item itemvalue="Application.OverrideRemind" />
         <item itemvalue="Application.FileTest" />
-        <item itemvalue="Application.FileUtil" />
       </list>
     </recent_temporary>
   </component>
@@ -155,7 +150,7 @@
       <workItem from="1710473724575" duration="3719000" />
       <workItem from="1710901201367" duration="10426000" />
       <workItem from="1710979947866" duration="8525000" />
-      <workItem from="1710995041090" duration="1015000" />
+      <workItem from="1710995041090" duration="3695000" />
     </task>
     <servers />
   </component>

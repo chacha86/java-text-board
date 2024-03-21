@@ -1,4 +1,4 @@
-package org.example.domain.article.model;
+package org.example.test;
 
 import org.example.base.CommonUtil;
 
@@ -6,48 +6,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
-public class ArticleMySQLRepository implements Repository {
-
+public class DBTest {
     private static final String URL = "jdbc:mysql://localhost:3306/t2";
     private static final String USER = "root";
     private static final String PASSWORD = "";
-
-    @Override
-    public void makeTestData() {
-
-    }
-
-    @Override
-    public ArrayList<Article> findArticleByKeyword(String keyword) {
-        return null;
-    }
-
-    @Override
-    public Article findArticleById(int id) {
-        return null;
-    }
-
-    @Override
-    public void deleteArticle(Article article) {
-
-    }
-
-    @Override
-    public void updateArticle(Article article, String newTitle, String newBody) {
-
-    }
-
-    @Override
-    public ArrayList<Article> findAll() {
-        return null;
-    }
-
-    @Override
-    public Article saveArticle(String title, String body) {
-
-        // article 테이블에 게시물 저장
+    public static void main(String[] args) {
         CommonUtil commonUtil = new CommonUtil();
         String sql = "INSERT INTO article (title, body, hit, regDate) VALUES (?, ?, ?, ?)";
 
@@ -56,8 +20,8 @@ public class ArticleMySQLRepository implements Repository {
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // PreparedStatement에 파라미터 설정
-            pstmt.setString(1, title);
-            pstmt.setString(2, body);
+            pstmt.setString(1, "제목1");
+            pstmt.setString(2, "내용1");
             pstmt.setInt(3, 0);
             pstmt.setString(4, commonUtil.getCurrentDateTime());
 
@@ -69,6 +33,5 @@ public class ArticleMySQLRepository implements Repository {
             System.out.println("데이터 저장 중 오류가 발생했습니다: " + e.getMessage());
         }
 
-        return null;
     }
 }
