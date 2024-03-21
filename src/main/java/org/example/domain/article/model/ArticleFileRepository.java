@@ -84,7 +84,14 @@ public class ArticleFileRepository {
 
     public Article findById(int id) {
         // id에 해당하는 게시물(article) 반환
-
+        for (Article article : articleList) {
+            if (article.getId() == id) {
+                // 일치하는 id를 가진 Article을 찾으면 반환
+                return article;
+            }
+        }
+        // 일치하는 Article이 없을 경우 null 반환
+        return null;
     }
 
 }

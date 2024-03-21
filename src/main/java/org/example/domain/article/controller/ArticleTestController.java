@@ -38,4 +38,5 @@ public class ArticleTestController {
         ArrayList<Article> articleList = articleRepository.findAll();
         articleView.printArticleList(articleList); // 전체 출력 -> 전체 저장소 넘기기
     }
+
 }
