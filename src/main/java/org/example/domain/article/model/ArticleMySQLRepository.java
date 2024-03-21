@@ -2,10 +2,7 @@ package org.example.domain.article.model;
 
 import org.example.base.CommonUtil;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class ArticleMySQLRepository implements Repository {
@@ -26,6 +23,34 @@ public class ArticleMySQLRepository implements Repository {
 
     @Override
     public Article findArticleById(int id) {
+        String sql = "SELECT id, title, body, hit, regDate FROM article WHERE id = ?";
+
+        try (
+                Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+        ) {
+            // 쿼리 파라미터 설정
+            pstmt.setInt(1, id);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    // ResultSet에서 데이터 추출
+                    int articleId = rs.getInt("id");
+                    String title = rs.getString("title");
+                    String body = rs.getString("body");
+                    int hit = rs.getInt("hit");
+                    String regDate = rs.getString("regDate");
+
+                    // Article 객체 생성 및 반환
+                    return new Article(articleId, title, body, hit, regDate);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("데이터 조회 중 오류가 발생했습니다: " + e.getMessage());
+        }
+
+        // 일치하는 게시물이 없는 경우 null 반환
         return null;
     }
 
@@ -36,7 +61,23 @@ public class ArticleMySQLRepository implements Repository {
 
     @Override
     public void updateArticle(Article article, String newTitle, String newBody) {
+        String sql = "UPDATE article SET title = ?, `body` = ? WHERE id = ?";
 
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            // PreparedStatement에 파라미터 설정
+            pstmt.setString(1, newTitle);
+            pstmt.setString(2, newBody);
+            pstmt.setInt(3, article.getId());
+
+            // 쿼리 실행
+            pstmt.executeUpdate();
+            System.out.println("데이터가 성공적으로 저장되었습니다.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("데이터 저장 중 오류가 발생했습니다: " + e.getMessage());
+        }
     }
 
     @Override
