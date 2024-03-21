@@ -2,15 +2,16 @@ package org.example.domain.article.model;
 
 import java.util.ArrayList;
 
-public abstract class Repository {
-    public abstract void makeTestData();
-    public abstract ArrayList<Article> findArticleByKeyword(String keyword);
-    public abstract Article findArticleById(int id);
-    public abstract void deleteArticle(Article article);
+// interface 모든 메서드가 추상메서드이면 인터페이스로 사용 가능
+public interface Repository {
+    void makeTestData();
+    ArrayList<Article> findArticleByKeyword(String keyword);
+    Article findArticleById(int id);
+    void deleteArticle(Article article);
 
-    public abstract void updateArticle(Article article, String newTitle, String newBody);
-    public abstract ArrayList<Article> findAll();
-    public abstract Article saveArticle(String title, String body);
+    void updateArticle(Article article, String newTitle, String newBody);
+    ArrayList<Article> findAll();
+    Article saveArticle(String title, String body);
 
 
 }

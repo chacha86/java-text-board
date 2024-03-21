@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArticleFileRepository extends Repository {
+public class ArticleFileRepository implements Repository {
     private int latestId = 1;
     private ArrayList<Article> articleList = new ArrayList<>(); // 저장소
 
