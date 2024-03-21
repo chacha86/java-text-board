@@ -94,4 +94,8 @@ public class ArticleFileRepository {
         return null;
     }
 
+    public void deleteArticle(Article article) {
+        // 매개변수로 받은 article을 삭제해주세요.
+    }
+
 }

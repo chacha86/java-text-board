@@ -39,4 +39,32 @@ public class ArticleTestController {
         articleView.printArticleList(articleList); // 전체 출력 -> 전체 저장소 넘기기
     }
 
+    public void delete() {
+
+        System.out.print("삭제할 게시물 번호를 입력해주세요 : ");
+
+        int inputId = getParamAsInt(scan.nextLine(), WRONG_VALUE);
+        if(inputId == WRONG_VALUE) {
+            return;
+        }
+
+        Article article = articleRepository.findById(inputId);
+
+        if (article == null) {
+            System.out.println("없는 게시물입니다.");
+            return;
+        }
+
+        articleRepository.deleteArticle(article);
+        System.out.printf("%d 게시물이 삭제되었습니다.\n", inputId);
+    }
+
+    private int getParamAsInt(String param, int defaultValue) {
+        try {
+            return Integer.parseInt(param);
+        } catch (NumberFormatException e) {
+            System.out.println("숫자를 입력해주세요.");
+            return defaultValue;
+        }
+    }
 }
