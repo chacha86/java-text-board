@@ -9,14 +9,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArticleFileRepository {
+public class ArticleFileRepository extends Repository {
     private int latestId = 1;
     private ArrayList<Article> articleList = new ArrayList<>(); // 저장소
 
+    public void makeTestData() {
+        System.out.println("테스트 데이터 생성하지 않습니다.");
+    }
     public ArticleFileRepository() {
         this.articleList = loadPostsFromFile("article.json");
 
-        if(articleList.size() == 0) {
+        if (articleList.size() == 0) {
             latestId = 0;
             return;
         }
@@ -30,7 +33,8 @@ public class ArticleFileRepository {
         ObjectMapper mapper = new ObjectMapper();
         try {
             // 파일로부터 Post 객체 리스트를 읽어옵니다.
-            return mapper.readValue(new File(filePath), new TypeReference<ArrayList<Article>>() {});
+            return mapper.readValue(new File(filePath), new TypeReference<ArrayList<Article>>() {
+            });
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("파일을 읽는 도중 오류가 발생했습니다: " + e.getMessage());
@@ -40,7 +44,7 @@ public class ArticleFileRepository {
     }
 
 
-    public void saveArticle(String title, String body) {
+    public Article saveArticle(String title, String body) {
         // 번호는 latestId, 제목이 title, 내용이 body, 조회수 0, 등록날짜 현재시간인 게시물을
         // json 파일로 저장
 
@@ -61,6 +65,7 @@ public class ArticleFileRepository {
             e.printStackTrace();
         }
 
+        return a1;
     }
 
     public ArrayList<Article> findAll() {
@@ -71,7 +76,8 @@ public class ArticleFileRepository {
 
         try {
             // JSON 파일로부터 Post 객체의 리스트를 읽어옵니다.
-            articleList = mapper.readValue(new File("article.json"), new TypeReference<ArrayList<Article>>() {});
+            articleList = mapper.readValue(new File("article.json"), new TypeReference<ArrayList<Article>>() {
+            });
             return articleList;
 
         } catch (IOException e) {
@@ -82,7 +88,7 @@ public class ArticleFileRepository {
 
     }
 
-    public Article findById(int id) {
+    public Article findArticleById(int id) {
         // id에 해당하는 게시물(article) 반환
         for (Article article : articleList) {
             if (article.getId() == id) {
@@ -114,11 +120,35 @@ public class ArticleFileRepository {
 
     public void updateArticle(Article article, String title, String body) {
         // todo5 - 매개변수로 받은 article 객체의 제목과 내용을 변경
+        Article target = findArticleById(article.getId());
+
+        if (target != null) {
+            target.setTitle(title);
+            target.setBody(body);
+        }
+
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            // 객체를 JSON 형태로 변환하여 파일에 저장
+            mapper.writeValue(new File("article.json"), articleList);
+            System.out.println("게시물이 삭제되고 JSON 파일이 업데이트 되었습니다.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("파일 저장 중 오류가 발생했습니다: " + e.getMessage());
+        }
     }
 
     public ArrayList<Article> findArticleByKeyword(String keyword) {
         // todo6 - 매개변수로 받은 keyword를 포함하는 제목을 가진 게시물을 찾아서 반환
-        return null;
+        ArrayList<Article> searchedList = new ArrayList<>();
+
+        for (Article article : articleList) {
+            if (article.getTitle().contains(keyword)) {
+                searchedList.add(article);
+            }
+        }
+
+        return searchedList;
     }
 
 }

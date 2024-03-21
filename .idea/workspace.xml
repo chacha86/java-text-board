@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84ec518b-b2c8-4d21-aedd-741b91db94b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/test/OverrideRemind.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article.json" beforeDir="false" afterPath="$PROJECT_DIR$/article.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/base/BoardApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/base/BoardApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/article/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/article/controller/ArticleTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/controller/ArticleTestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/ArticleFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/ArticleFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/article/model/ArticleRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,33 +60,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="ContainsTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.test.ContainsTest" />
-      <module name="java-board.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.domain.article.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ExceptionTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.test.ExceptionTest" />
-      <module name="java-board.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.domain.article.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.OverrideRemind (1)">
     <configuration name="FileTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.test.FileTest" />
       <module name="java-board.main" />
@@ -119,13 +100,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OverrideRemind (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.test.OverrideRemind" />
+      <module name="java-board.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OverrideRemind" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.test.OverrideRemind" />
+      <module name="java-board.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.OverrideRemind (1)" />
+        <item itemvalue="Application.OverrideRemind" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.FileTest" />
         <item itemvalue="Application.FileUtil" />
-        <item itemvalue="Application.ExceptionTest" />
-        <item itemvalue="Application.ContainsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -144,7 +151,7 @@
       <workItem from="1710374014412" duration="14273000" />
       <workItem from="1710473724575" duration="3719000" />
       <workItem from="1710901201367" duration="10426000" />
-      <workItem from="1710979947866" duration="3568000" />
+      <workItem from="1710979947866" duration="6591000" />
     </task>
     <servers />
   </component>

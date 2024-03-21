@@ -4,7 +4,8 @@ import org.example.base.CommonUtil;
 
 import java.util.ArrayList;
 
-public class ArticleRepository {
+public class ArticleRepository extends Repository {
+
     ArrayList<Article> articleList = new ArrayList<>();
     CommonUtil commonUtil = new CommonUtil();
     int latestArticleId = 4;
