@@ -23,7 +23,7 @@ public class BoardApp {
                 case "add" -> articleController.add();
                 case "list" -> articleController.list();
 //                case "update" -> articleController.update();
-//                case "delete" -> articleController.delete();
+                case "delete" -> articleController.delete();
 //                case "detail" -> articleController.detail();
 //                case "search" -> articleController.search();
                 default -> System.out.println("올바른 명령어가 아닙니다.");

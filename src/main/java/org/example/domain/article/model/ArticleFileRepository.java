@@ -95,7 +95,21 @@ public class ArticleFileRepository {
     }
 
     public void deleteArticle(Article article) {
-        // 매개변수로 받은 article을 삭제해주세요.
+        // 매개변수로 받은 article 객체를 articleList에서 삭제
+        articleList.remove(article);
+
+        // 변경된 articleList를 다시 파일에 저장하는 로직을 추가할 수 있습니다.
+        // 이는 저장소의 일관성을 유지하는 데 도움이 됩니다.
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            // 객체를 JSON 형태로 변환하여 파일에 저장
+            mapper.writeValue(new File("article.json"), articleList);
+            System.out.println("게시물이 삭제되고 JSON 파일이 업데이트 되었습니다.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("파일 저장 중 오류가 발생했습니다: " + e.getMessage());
+        }
+
     }
 
 }
