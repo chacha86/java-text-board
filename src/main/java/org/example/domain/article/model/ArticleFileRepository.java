@@ -112,7 +112,7 @@ public class ArticleFileRepository {
 
     }
 
-    public void update(Article article, String title, String body) {
+    public void updateArticle(Article article, String title, String body) {
         // todo5 - 매개변수로 받은 article 객체의 제목과 내용을 변경
     }
 
