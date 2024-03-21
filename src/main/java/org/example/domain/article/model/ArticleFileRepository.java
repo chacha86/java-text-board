@@ -112,4 +112,13 @@ public class ArticleFileRepository {
 
     }
 
+    public void update(Article article, String title, String body) {
+        // todo5 - 매개변수로 받은 article 객체의 제목과 내용을 변경
+    }
+
+    public ArrayList<Article> findArticleByKeyword(String keyword) {
+        // todo6 - 매개변수로 받은 keyword를 포함하는 제목을 가진 게시물을 찾아서 반환
+        return null;
+    }
+
 }
