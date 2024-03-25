@@ -57,6 +57,22 @@ public class ArticleMySQLRepository implements Repository {
     @Override
     public void deleteArticle(Article article) {
 
+        String sql = "DELETE FROM article WHERE id = ?";
+
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            // PreparedStatement에 파라미터 설정
+            pstmt.setInt(1, article.getId());
+
+            // 쿼리 실행
+            pstmt.executeUpdate();
+            System.out.println("데이터가 성공적으로 저장되었습니다.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("데이터 저장 중 오류가 발생했습니다: " + e.getMessage());
+        }
+
     }
 
     @Override
