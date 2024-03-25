@@ -98,7 +98,32 @@ public class ArticleMySQLRepository implements Repository {
 
     @Override
     public ArrayList<Article> findAll() {
-        return null;
+        String sql = "SELECT * FROM article";
+        ArrayList<Article> articleList = new ArrayList<>();
+
+        try (
+                Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+        ) {
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    // ResultSet에서 데이터 추출
+                    int articleId = rs.getInt("id");
+                    String title = rs.getString("title");
+                    String body = rs.getString("body");
+                    int hit = rs.getInt("hit");
+                    String regDate = rs.getString("regDate");
+
+                    // Article 객체 생성 및 반환
+                    Article article = new Article(articleId, title, body, hit, regDate);
+                    articleList.add(article);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("데이터 조회 중 오류가 발생했습니다: " + e.getMessage());
+        }
+        return articleList;
     }
 
     @Override
